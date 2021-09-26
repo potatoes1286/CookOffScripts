@@ -1,7 +1,3 @@
-# H3VR.EmptyBepInEx
-Template BepInEx plugin for H3VR. 
+# Cook off!
 
-Includes
-- Autobuilding Thunderstore package
-- Stripped publicized H3VR assembly
-- MMHook H3VR assembly
+payday 2 but epic!
