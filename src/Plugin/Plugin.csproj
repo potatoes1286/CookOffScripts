@@ -17,10 +17,10 @@
     
     <ItemGroup>
       <Reference Include="Assembly-CSharp, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>E:\SteamLibrary\steamapps\common\H3VR\h3vr_Data\Managed\publicized_assemblies\Assembly-CSharp_publicized.dll</HintPath>
+        <HintPath>..\libs\Assembly-CSharp_publicized.dll</HintPath>
       </Reference>
       <Reference Include="WurstMod, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>E:\unityh3vrmodding\cookoff\CookOff\Assets\Plugins\WurstMod.dll</HintPath>
+        <HintPath>..\libs\WurstMod.dll</HintPath>
       </Reference>
     </ItemGroup>
 
