@@ -1,10 +1,11 @@
 ﻿using FistVR;
 using UnityEngine;
 
-namespace H3VRMod
+namespace H3VRMod.CookScripts
 {
-	public class CookStandIngredient : FVRPhysicalObject
+	public class CookStandIngredient : MonoBehaviour
 	{
+		public FVRPhysicalObject obj;
 		public int IngredientType;
 	}
 }

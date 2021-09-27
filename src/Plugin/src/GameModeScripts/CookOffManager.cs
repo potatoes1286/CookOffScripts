@@ -134,7 +134,7 @@ namespace H3VRMod.GameModeScripts
 			{
 				AudioEvent key = VoiceQueue.Dequeue();
 				key.PitchRange = new Vector2(1f, 1f);
-				key.VolumeRange = new Vector2(0.6f, 0.6f);
+				key.VolumeRange = new Vector2(1f, 1f);
 				float maxTime = 0;
 				//get longest clip length in key
 				foreach (var clip in key.Clips) if (clip.length > maxTime) maxTime = clip.length;

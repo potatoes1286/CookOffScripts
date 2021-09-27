@@ -14,11 +14,14 @@ namespace H3VRMod.CookScripts
 			if (cookStand.waitingForIngredient)
 			{
 				CookStandIngredient ingredient = other.gameObject.GetComponent<CookStandIngredient>();
-				if (ingredient.IngredientType == importType)
+				if (ingredient != null)
 				{
-					cookStand.AddIngredient(ingredient.IngredientType);
-					ingredient.ForceBreakInteraction();
-					Destroy(ingredient);
+					if (ingredient.IngredientType == importType)
+					{
+						cookStand.AddIngredient(ingredient.IngredientType);
+						ingredient.obj.ForceBreakInteraction();
+						Destroy(ingredient.gameObject);
+					}
 				}
 			}
 		}

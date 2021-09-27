@@ -23,19 +23,23 @@ namespace H3VRMod.CookScripts
 		
 		public Animation workingAnim;
 		public AudioSource audSource;
-		public AudioClip WorkingAudio;
+
+		public void Start()
+		{
+			currentTimeToNextIngredient = Random.Range(timeToNextIngredient.x, timeToNextIngredient.y);
+		}
 
 		public void FixedUpdate()
 		{
 			//play animation and sound if working; stop if not
 			if (waitingForIngredient)
 			{
-				if (workingAnim.isPlaying)	workingAnim.Stop();
+				if(workingAnim != null) if (workingAnim.isPlaying)	workingAnim.Stop();
 				if (audSource.isPlaying)	audSource.Stop();
 			}
 			else
 			{
-				if (!workingAnim.isPlaying) workingAnim.Play();
+				if(workingAnim != null) if (!workingAnim.isPlaying) workingAnim.Play();
 				if (!audSource.isPlaying)	audSource.Play();
 			}
 			//work if not empty
@@ -46,6 +50,7 @@ namespace H3VRMod.CookScripts
 				secsWorking = 0;
 				Instantiate(IM.OD[exportID].GetGameObject(), exportLoc.position, exportLoc.rotation); //make export
 			}
+			UpdateIngredients();
 		}
 
 		public void UpdateIngredients()
@@ -55,6 +60,7 @@ namespace H3VRMod.CookScripts
 			if (!(currentTimeToNextIngredient > 0) && !waitingForIngredient)
 			{
 				waitingForIngredient = true;
+				RequestIngrendient();
 			}
 			//7.5 = correction time; announcer will correct himself if wrong ingredient is said
 			if (currentTimeToNextIngredient < 7.5f)
